@@ -113,6 +113,7 @@ public class JavaTestRunner {
 	private static final String WITH_AGENT = "withAgent";
 	private static final String INTERACTIVE = "interactive";
 	private static final String CONFIG = "config";
+	private static final String CONCURRENCY = "concurreny"; 
 
 	public static void main(String args[]) throws Exception {
 		ArrayList<String> essentialParameters = new ArrayList<String>(); 
@@ -126,6 +127,7 @@ public class JavaTestRunner {
 		essentialParameters.add(WITH_AGENT);
 		essentialParameters.add(INTERACTIVE);
 		essentialParameters.add(CONFIG);
+		essentialParameters.add(CONCURRENCY);
 
 		for (String arg : args) {
 			if (arg.contains("=")) { 
