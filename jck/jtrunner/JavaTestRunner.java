@@ -115,6 +115,7 @@ public class JavaTestRunner {
 	private static final String INTERACTIVE = "interactive";
 	private static final String CONFIG = "config";
 	private static final String CONCURRENCY = "concurrency"; 
+	private static final String CONFIG_ALT_PATH = "configAltPath"; 
 
 	public static void main(String args[]) throws Exception {
 		ArrayList<String> essentialParameters = new ArrayList<String>(); 
