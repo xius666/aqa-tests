@@ -52,6 +52,7 @@ public class JavaTestRunner {
 	private static String concurrencyString;
 	private static String jckVersion;
 	private static String config;
+	private static String configAltPath;
 	private static String jckRoot;
 
 	private static String testSuite;
@@ -114,6 +115,8 @@ public class JavaTestRunner {
 	private static final String INTERACTIVE = "interactive";
 	private static final String CONFIG = "config";
 	private static final String CONCURRENCY = "concurreny"; 
+	private static final String CONFIG_ALT_PATH = "configAltPath"; 
+	
 
 	public static void main(String args[]) throws Exception {
 		ArrayList<String> essentialParameters = new ArrayList<String>(); 
@@ -128,6 +131,7 @@ public class JavaTestRunner {
 		essentialParameters.add(INTERACTIVE);
 		essentialParameters.add(CONFIG);
 		essentialParameters.add(CONCURRENCY);
+		essentialParameters.add(CONFIG_ALT_PATH);
 
 		for (String arg : args) {
 			if (arg.contains("=")) { 
@@ -189,7 +193,8 @@ public class JavaTestRunner {
 		withAgent = testArgs.get(WITH_AGENT) == null ? "off" : testArgs.get(WITH_AGENT); 
 		interactive = testArgs.get(INTERACTIVE) == null ? "no" : testArgs.get(INTERACTIVE); 
 		concurrencyString = testArgs.get("concurrency") == null ? "NULL" : testArgs.get("concurrency"); 
-		config = testArgs.get(CONFIG) == null ? "NULL" : testArgs.get(CONFIG); 
+		config = testArgs.get(CONFIG) == null ? "NULL" : testArgs.get(CONFIG);
+		configAltPath = testArgs.get(CONFIG_ALT_PATH) == null ? "NULL" : testArgs.get(CONFIG_ALT_PATH); 
 		testRoot = new File(testArgs.get(TEST_ROOT)).getCanonicalPath();
 		resultDir = new File(testArgs.get(RESULTS_ROOT)).getCanonicalPath();	
 		jckVersionNo = jckVersion.replace("jck", "");	
@@ -263,11 +268,16 @@ public class JavaTestRunner {
 		}
 
 		if (testSuite.equals("RUNTIME") && (tests.contains("api/java_net") || tests.contains("api/java_nio") || tests.contains("api/org_ietf") || tests.contains("api/javax_security") || tests.equals("api"))) {
-			if (config.equals("NULL")) {
-				config = "default";	
+			if (!configAltPath.equals("NULL")) {
+				jckConfigLoc = configAltPath;
+			} else {
+				if (config.equals("NULL")) {
+					config = "default";	
+				}
+				String subdir = "config/" + config;
+				jckConfigLoc = jckRoot + File.separator + subdir; 
 			}
-			String subdir = "config/" + config;
-			jckConfigLoc = jckRoot + File.separator + subdir;
+			
 			File configFolder = new File(jckConfigLoc); 
 			if (!configFolder.exists()) {
 				System.out.println(testExecutionType + "Cannot locate the configuration directory containing the Kerberos and Http server settings here: " + jckConfigLoc + ". The requested tests include at least one of the tests which require these files.");
