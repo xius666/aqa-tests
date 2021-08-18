@@ -332,7 +332,7 @@
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE_JRE) tests=lang jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=RUNTIME; \
+		<command>$(JCK_CMD_TEMPLATE_JRE) tests=lang jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=RUNTIME concurrency=cpus; \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>special</level>
