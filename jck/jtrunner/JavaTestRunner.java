@@ -113,7 +113,7 @@ public class JavaTestRunner {
 	private static final String WITH_AGENT = "withAgent";
 	private static final String INTERACTIVE = "interactive";
 	private static final String CONFIG = "config";
-	private static final String CONCURRENCY = "concurreny"; 
+	private static final String CONCURRENCY = "concurrency"; 
 
 	public static void main(String args[]) throws Exception {
 		ArrayList<String> essentialParameters = new ArrayList<String>(); 
