@@ -1273,18 +1273,4 @@
 			<version>9+</version>
 		</versions>
 	</test>
-	<test>
-		<testCaseName>jck-runtime-api_JRE</testCaseName>
-		<variations>
-			<variation>NoOptions</variation>
-		</variations>
-		<command>$(JCK_CMD_TEMPLATE_JRE) tests=api jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) configAltPath=$(TEST_ROOT)$(D)jck$(D)jtrunner$(D)config$(D)default testsuite=RUNTIME concurrency=cpus; \
-	$(TEST_STATUS)</command>
-		<levels>
-			<level>special</level>
-		</levels>
-		<groups>
-			<group>jck</group>
-		</groups>
-	</test>
 </playlist>
