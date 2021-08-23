@@ -16,22 +16,10 @@
 	<include>../jck.mk</include>
 	<test>
 		<testCaseName>jck-devtools-schema_bind-bind_class</testCaseName>
-		<disabled>
-			<comment>Disabled on x64 Linux on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on x64 Linux on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=schema_bind/bind_class jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) -test-args=$(Q)tests=schema_bind/bind_class,jckRoot=$(JCK_ROOT),jckversion=$(JCK_VERSION),testsuite=DEVTOOLS,concurrency=cpus$(Q); \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -45,22 +33,10 @@
 	</test>
 	<test>
 		<testCaseName>jck-devtools-schema_bind-bind_dom</testCaseName>
-		<disabled>
-			<comment>Disabled on aarch64 + ppc64le on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>aarch64_linux(_mixed)?|ppc64le_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on aarch64 + ppc64le on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>aarch64_linux(_mixed)?|ppc64le_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE)tests=schema_bind/bind_dom jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE)-test-args=$(Q)tests=schema_bind/bind_dom,jckRoot=$(JCK_ROOT),jckversion=$(JCK_VERSION),testsuite=DEVTOOLS,concurrency=cpus$(Q); \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -74,22 +50,10 @@
 	</test>
 	<test>
 		<testCaseName>jck-devtools-schema_bind-bind_factoryMethod</testCaseName>
-		<disabled>
-			<comment>Disabled on aarch64 on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on aarch64 on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=schema_bind/bind_factoryMethod jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) -test-args=$(Q)tests=schema_bind/bind_factoryMethod,jckRoot=$(JCK_ROOT),jckversion=$(JCK_VERSION),testsuite=DEVTOOLS,concurrency=cpus$(Q); \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -103,22 +67,10 @@
 	</test>
 	<test>
 		<testCaseName>jck-devtools-schema_bind-bind_globalBindings</testCaseName>
-		<disabled>
-			<comment>Disabled on aarch64 on jdk8 due to backlog/issues/302, on win64 due to backlog/issues/507. Awaiting potential test / setup issue resolution</comment>
-			<platform>aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on aarch64 on jdk8 due to backlog/issues/302, on win64 due to backlog/issues/507. Awaiting potential test / setup issue resolution</comment>
-			<platform>aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=schema_bind/bind_globalBindings jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) -test-args=$(Q)tests=schema_bind/bind_globalBindings,jckRoot=$(JCK_ROOT),jckversion=$(JCK_VERSION),testsuite=DEVTOOLS,concurrency=cpus$(Q); \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -132,22 +84,10 @@
 	</test>
 	<test>
 		<testCaseName>jck-devtools-schema_bind-bind_inlineBinaryData</testCaseName>
-		<disabled>
-			<comment>Disabled on aarch64 on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on aarch64 on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=schema_bind/bind_inlineBinaryData jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) -test-args=$(Q)tests=schema_bind/bind_inlineBinaryData,jckRoot=$(JCK_ROOT),jckversion=$(JCK_VERSION),testsuite=DEVTOOLS,concurrency=cpus$(Q); \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -164,7 +104,7 @@
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=schema_bind/bind_javaType jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) -test-args=$(Q)tests=schema_bind/bind_javaType,jckRoot=$(JCK_ROOT),jckversion=$(JCK_VERSION),testsuite=DEVTOOLS,concurrency=cpus$(Q); \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -178,22 +118,10 @@
 	</test>
 	<test>
 		<testCaseName>jck-devtools-schema_bind-bind_property</testCaseName>
-		<disabled>
-			<comment>Disabled on x64 Linux on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on x64 Linux on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=schema_bind/bind_property jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) -test-args=$(Q)tests=schema_bind/bind_property,jckRoot=$(JCK_ROOT),jckversion=$(JCK_VERSION),testsuite=DEVTOOLS,concurrency=cpus$(Q); \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -207,22 +135,10 @@
 	</test>
 	<test>
 		<testCaseName>jck-devtools-schema_bind-bind_schemaBindings</testCaseName>
-		<disabled>
-			<comment>Disabled on ppc64le Linux on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>ppc64le_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on ppc64le Linux on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>ppc64le_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=schema_bind/bind_schemaBindings jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) -test-args=$(Q)tests=schema_bind/bind_schemaBindings,jckRoot=$(JCK_ROOT),jckversion=$(JCK_VERSION),testsuite=DEVTOOLS,concurrency=cpus$(Q); \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
