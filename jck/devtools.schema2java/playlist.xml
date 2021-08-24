@@ -16,22 +16,10 @@
 	<include>../jck.mk</include>
 	<test>
 		<testCaseName>jck-devtools-schema2java-nisttest</testCaseName>
-		<disabled>
-			<comment>Disabled on x64 Linux + aarch64 on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?|aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on x64 Linux + aarch64 on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?|aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=schema2java/nisttest jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) tests=schema2java/nisttest jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS concurrency=cpus; \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -45,22 +33,10 @@
 	</test>
 	<test>
 		<testCaseName>jck-devtools-schema2java-structures</testCaseName>
-		<disabled>
-			<comment>Disabled on aarch64 Linux + aarch64 on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?|aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on aarch64 Linux + aarch64 on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?|aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=schema2java/structures jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) tests=schema2java/structures jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS concurrency=cpus; \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>

@@ -16,22 +16,10 @@
 	<include>../jck.mk</include>
 	<test>
 		<testCaseName>jck-devtools-java2schema-CustomizedMapping</testCaseName>
-		<disabled>
-			<comment>Disabled on x64 Linux + aarch64 + ppc64le on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?|aarch64_linux(_mixed)?|ppc64le_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on x64 Linux + aarch64 + ppc64le on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?|aarch64_linux(_mixed)?|ppc64le_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=java2schema/CustomizedMapping jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) tests=java2schema/CustomizedMapping jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS concurrency=cpus; \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -48,7 +36,7 @@
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=java2schema/DefaultMapping jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) tests=java2schema/DefaultMapping jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS concurrency=cpus; \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -61,3 +49,4 @@
 		</versions>
 	</test>
 </playlist>
+

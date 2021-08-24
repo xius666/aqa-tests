@@ -16,22 +16,10 @@
 	<include>../jck.mk</include>
 	<test>
 		<testCaseName>jck-devtools-xml_schema-boeingData</testCaseName>
-		<disabled>
-			<comment>Disabled on x64 Linux + aarch64 + ppc64le on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?|aarch64_linux(_mixed)?|ppc64le_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on x64 Linux + aarch64 + ppc64le on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?|aarch64_linux(_mixed)?|ppc64le_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=xml_schema/boeingData jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) tests=xml_schema/boeingData jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS concurrency=cpus; \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -44,23 +32,62 @@
 		</versions>
 	</test>
 	<test>
-		<testCaseName>jck-devtools-xml_schema-msData</testCaseName>
-		<disabled>
-			<comment>Disabled on aarch64 Linux + ppc64le on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>aarch64_linux(_mixed)?|ppc64le_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on aarch64 Linux + ppc64le on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>aarch64_linux(_mixed)?|ppc64le_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-			</disabled>
+		<testCaseName>jck-devtools-xml_schema-msData-group1</testCaseName>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=xml_schema/msData jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) tests=$(RUNTIME_DEVTOOLS_XML_SCHEMA_MSDATA_GROUP1) jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS concurrency=cpus; \
+	$(TEST_STATUS)</command>
+		<levels>
+			<level>extended</level>
+		</levels>
+		<groups>
+			<group>jck</group>
+		</groups>
+		<versions>
+			<version>8</version>
+		</versions>
+	</test>
+	<test>
+		<testCaseName>jck-devtools-xml_schema-msData-group2</testCaseName>
+		<variations>
+			<variation>NoOptions</variation>
+		</variations>
+		<command>$(JCK_CMD_TEMPLATE) tests=$(RUNTIME_DEVTOOLS_XML_SCHEMA_MSDATA_GROUP2) jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS concurrency=cpus; \
+	$(TEST_STATUS)</command>
+		<levels>
+			<level>extended</level>
+		</levels>
+		<groups>
+			<group>jck</group>
+		</groups>
+		<versions>
+			<version>8</version>
+		</versions>
+	</test>
+	<test>
+		<testCaseName>jck-devtools-xml_schema-msData-group3</testCaseName>
+		<variations>
+			<variation>NoOptions</variation>
+		</variations>
+		<command>$(JCK_CMD_TEMPLATE) tests=$(RUNTIME_DEVTOOLS_XML_SCHEMA_MSDATA_GROUP3) jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS concurrency=cpus; \
+	$(TEST_STATUS)</command>
+		<levels>
+			<level>extended</level>
+		</levels>
+		<groups>
+			<group>jck</group>
+		</groups>
+		<versions>
+			<version>8</version>
+		</versions>
+	</test>
+	<test>
+		<testCaseName>jck-devtools-xml_schema-msData-group4</testCaseName>
+		<variations>
+			<variation>NoOptions</variation>
+		</variations>
+		<command>$(JCK_CMD_TEMPLATE) tests=$(RUNTIME_DEVTOOLS_XML_SCHEMA_MSDATA_GROUP4) jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS concurrency=cpus; \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -74,22 +101,10 @@
 	</test>
 	<test>
 		<testCaseName>jck-devtools-xml_schema-nistData</testCaseName>
-		<disabled>
-			<comment>Disabled on x64 Linux on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?|aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on x64 Linux on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?|aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=xml_schema/nistData jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) tests=xml_schema/nistData jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS concurrency=cpus; \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
@@ -103,22 +118,10 @@
 	</test>
 	<test>
 		<testCaseName>jck-devtools-xml_schema-sunData</testCaseName>
-		<disabled>
-			<comment>Disabled on x64 Linux on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?||aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>ibm</impl>
-		</disabled>
-		<disabled>
-			<comment>Disabled on x64 Linux on jdk8 due to backlog/issues/302. Awaiting potential test / setup issue resolution</comment>
-			<platform>x86-64_linux(_mixed)?||aarch64_linux(_mixed)?</platform>
-			<version>8</version>
-			<impl>openj9</impl>
-		</disabled>
 		<variations>
 			<variation>NoOptions</variation>
 		</variations>
-		<command>$(JCK_CMD_TEMPLATE) tests=xml_schema/sunData jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS; \
+		<command>$(JCK_CMD_TEMPLATE) tests=xml_schema/sunData jckRoot=$(JCK_ROOT) jckversion=$(JCK_VERSION) testsuite=DEVTOOLS concurrency=cpus; \
 	$(TEST_STATUS)</command>
 		<levels>
 			<level>extended</level>
