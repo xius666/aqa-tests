@@ -417,9 +417,9 @@ public class JavaTestRunner {
 		}
 
 		// If concurrency was not specified as a test-arg it will have been assigned the value NULL.
-		// Default to concurrency=1.
+		// Default to concurrency=cpu.
 		if ( concurrencyString.equals("NULL") ) {
-			concurrencyString = "1";
+			concurrencyString = "cpus";
 		}
 
 		// If concurrency=cpus was specified, set concurrency to the number of processors + 1.
