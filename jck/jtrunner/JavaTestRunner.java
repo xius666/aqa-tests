@@ -833,13 +833,14 @@ public class JavaTestRunner {
 			}
 
 			long timeout = 24;
-			int chmodRC = 0; 
-			int jckRC = 0; 
+			int chmodRC = -1;
+			int jckRC = -1;
+			boolean endedWithinTimeLimit = false;
 			
 			// Use the presence of a '/' to signify that we are running a subset of tests.
 			// If one of the highest level test nodes is being run it is likely to take a long time.
 			if ( tests.contains("/") && !isRiscv ) {
-				timeout = 8;
+				timeout = 6;
 			}
 
 			if (!platform.equals("win")) {
@@ -862,9 +863,16 @@ public class JavaTestRunner {
 			jck = startSubProcess("jck", jckCmd);
 
 			// Block parent for this process to finish
-			boolean endedWithinTimeLimit = jck.waitFor(timeout, TimeUnit.HOURS); 
+			endedWithinTimeLimit = jck.waitFor(timeout, TimeUnit.HOURS); 
 			
-			jckRC = jck.exitValue(); 
+			try {
+				jckRC = jck.exitValue();
+			} catch (java.lang.IllegalThreadStateException e) {
+				// If the 'jck' process "hangs" for some reasons, exitValue() will result in this exception.
+				// Attempt to forcibly terminate the process at that point.
+				jck.destroy();
+				endedWithinTimeLimit = false;
+			}
 
 			// The Compiler -ANNOT, EXPR and LMBD may take over 6 hours to run on some machines.
 			if (javatestAgent != null) {
